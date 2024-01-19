@@ -1,0 +1,178 @@
+{
+  "medicos": [
+    {
+      "name": "Ailégig",
+      "cpf": "32165412159",
+      "crm": "1234",
+      "title": "Cardiologista",
+      "description": "Especialidade médica que se dedica ao diagnóstico e tratamento de doenças do coração e do sistema cardiovascular."
+    },{
+      "name": "Bruno",
+      "cpf": "32165412119",
+      "crm": "1235",
+      "title": "Dermatologista",
+      "description":"Área médica que trata das doenças relacionadas à pele, cabelo e unhas, além de problemas dermatológicos."
+    },
+    {
+      "name": "Christiane",
+      "cpf": "14789632145",
+      "crm": "1236",
+      "title": "Endocrinologista",
+      "description": "Especialidade que se concentra nos distúrbios hormonais e no sistema endócrino, como diabetes e distúrbios da tireoide."
+    },
+    {
+      "name":"Djair",
+      "cpf":"67183492500",
+      "crm":"598102",
+      "title":"Mastologista",
+      "description":"Especializado na saúde das mamas. Tanto em mulheres quanto em homens."
+    },
+    {
+      "name":"Edson",
+      "cpf":"35795146500",
+      "crm":"654987",
+      "title":"Biomédico",
+      "description":"Responsável por usar quantidades pequenas de radioisótopos, ou também chamado de radiofármacos, com o objetivo de examinar melhor a função de órgãos que estão em foco num diagnóstico."
+    },
+    {
+      "name":"Fábio",
+      "cpf":"10450260399",
+      "crm":"985540",
+      "title":"Neurocirurgião",
+      "description":"Realiza cirurgias no sistema nervoso, incluindo cérebro, medula espinhal e nervos periféricos, para tratar condições neurológicas."
+    },
+    {
+      "name":"Gabriel",
+      "cpf":"01312332100",
+      "crm":"444111",
+      "title":"Hematologia",
+      "description":"Trata de doenças do sangue, incluindo anemias, distúrbios de coagulação e cânceres sanguíneos."
+    },
+    {
+      "name":"Gabriela",
+      "cpf":"85874796900",
+      "crm":"951032",
+      "title":"Ginecologista",
+      "description":"Especialidade voltada para a saúde da mulher, tratando questões relacionadas ao sistema reprodutivo feminino."
+    },
+    {
+      "name":"Igor",
+      "cpf":"95432105231",
+      "crm":"410413",
+      "title":"Geriatra",
+      "description":"Foca no cuidado de idosos, abordando questões de envelhecimento, saúde mental e doenças associadas à idade."
+    },
+    {
+      "name":"Ivison",
+      "cpf":"32101230255",
+      "crm":"587413",
+      "title":"Gastroenterologista",
+      "description":"Trata de doenças do trato digestivo, incluindo estômago, intestinos, fígado e pâncreas."
+    },
+    {
+      "name":"Jamiely",
+      "cpf":"74101474100",
+      "crm":"741014",
+      "title":"Nefrologista" ,
+      "description":"Trata de doenças renais, incluindo insuficiência renal, hipertensão renal e distúrbios do equilíbrio hídrico."
+    },
+    {
+      "name":"Jessany",
+      "cpf":"98569856544",
+      "crm":"989898",
+      "title":"Pneumologista",
+      "description":"Especialidade que se dedica às doenças respiratórias, como asma, doença pulmonar obstrutiva crônica (DPOC) e pneumonia."
+    },
+    {
+      "name":"João Marcos",
+      "cpf":"59685695633",
+      "crm":"520631",
+      "title":"Neurologista",
+      "description":"Lida com o diagnóstico e tratamento de distúrbios neurológicos, como epilepsia, enxaqueca e acidente vascular cerebral."
+    },
+    {
+      "name":"João Proti",
+      "cpf":"74101478966",
+      "crm": "635416",
+      "title":"Obstetra",
+      "description":"Foca na saúde da mulher durante a gravidez, parto e pós-parto, bem como no cuidado do feto."
+    },
+    {
+      "name":"Luis",
+      "cpf":"32101310200",
+      "crm":"741147",
+      "title":"Oncologista",
+      "description":"Trata de cânceres, incluindo diagnóstico, tratamento e acompanhamento de pacientes com câncer."
+    },
+    {
+      "name":"Marília",
+      "cpf":"85296385200",
+      "crm":"564645",
+      "title":"Oftalmologista",
+      "description":"Especialidade que cuida da saúde ocular, tratando condições como miopia, catarata e glaucoma."
+    },
+    {
+      "name":"Matheus",
+      "cpf":"45632147899",
+      "crm":"521453",
+      "title":"Ortopedista",
+      "description":"Lida com problemas do sistema musculoesquelético, incluindo ossos, articulações, músculos e tendões."
+    },
+    {
+      "name":"Murilo",
+      "cpf":"12301232144",
+      "crm":"520520",
+      "title":"Otorrinolaringologista",
+      "description":"Trata de distúrbios do ouvido, nariz, garganta, cabeça e pescoço, incluindo audição e equilíbrio."
+    },
+    {
+      "name":"Patrick Lima",
+      "cpf":"96396395100",
+      "crm":"123132",
+      "title":"Pediatra",
+      "description":"Especializado na saúde de crianças, abordando questões pediátricas, desenvolvimento infantil e prevenção de doenças."
+    },
+    {
+      "name":"Patrick Vilhena",
+      "cpf":"96385296312",
+      "crm":"963962",
+      "title":"Psiquiatra",
+      "description":"Lida com transtornos mentais, distúrbios emocionais e problemas psicológicos, proporcionando tratamento e terapia."
+    },
+    {
+      "name":"Paulo",
+      "cpf":"32132165411",
+      "crm":"369369",
+      "title":"Radiologista",
+      "description":"Especialidade que utiliza técnicas de imagem, como raios-X e ressonância magnética, para diagnosticar e tratar condições médicas."
+    },
+    {
+      "name":"Rubens",
+      "cpf":"25825825800",
+      "crm":"258741",
+      "title":"Urologia",
+      "description":"Trata de problemas do trato urinário em homens e mulheres, além de questões relacionadas ao sistema reprodutivo masculino."
+    },
+    {
+      "name":"Suamy",
+      "cpf":"12332112300",
+      "crm":"369563",
+      "title":"Reumatologista",
+      "description":"Foca em doenças reumáticas, como artrite e outras condições que afetam articulações, ossos e tecidos conjuntivos."
+    },
+    {
+      "name":"Suverleide",
+      "cpf":"12345678933",
+      "crm":"12345",
+      "title": "Medico Esportivo",
+      "description":"Lida com a saúde de atletas, abrangendo prevenção, diagnóstico e tratamento de lesões relacionadas à prática esportiva."
+    },
+    {
+      "name":"Wendel",
+      "cpf":"36925814789",
+      "crm":"321654",
+      "title":"Infectologia",
+      "description":"Especialidade que se dedica ao estudo, diagnóstico e tratamento de doenças infecciosas causadas por vírus, bactérias, fungos ou parasitas."
+    }
+  ]
+}
