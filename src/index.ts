@@ -13,8 +13,8 @@ let port: number, url: string;
 port = 443;
 url = 'https://17b8d315-2f47-4429-aec4-caa081cfc417-00-1gcz5e768otcp.kirk.replit.dev';
 
-port = 80;
-url = 'http://localhost';
+// port = 80;
+// url = 'http://localhost';
 
 function input_keyboard(msg: string = ""): Promise<string> {
   const promisse = new Promise<string>((resolve) => {
