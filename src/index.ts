@@ -293,7 +293,7 @@ async function getOneDoctor(): Promise<undefined | {}> {
   }
 }
 
-async function updateDoctor(): Promise<any> {
+async function updateDoctor(): Promise<undefined | {}> {
   let doctor: any = await getOneDoctor();
   if (doctor) {
     /*
