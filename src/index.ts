@@ -314,13 +314,11 @@ async function updateDoctor(): Promise<undefined | {}> {
   return doctor;
 }
 
-async function getDoctorByCPF(cpf: string): Promise<any> {
+async function getDoctorByCPF(cpf: string): Promise<undefined | Array<{}>> {
   try {
     const doctor = await axios.get(`${url}:${port}/cpf/${cpf}`);
-    if (doctor)
-      return [doctor.data];
-    else
-      console.log("Médico não encontrado");
+    if (doctor) return [doctor.data];
+    else console.log("Médico não encontrado");
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
@@ -328,13 +326,11 @@ async function getDoctorByCPF(cpf: string): Promise<any> {
   }
 }
 
-async function getDoctorById(id: string): Promise<any> {
+async function getDoctorById(id: string): Promise<undefined | Array<{}>> {
   try {
     const doctor = await axios.get(`${url}:${port}/id/${id}`);
-    if (doctor)
-      return doctor.data;
-    else
-      console.log("Médico não encontrado");
+    if (doctor) return [doctor.data];
+    else console.log("Médico não encontrado");
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
@@ -345,10 +341,8 @@ async function getDoctorById(id: string): Promise<any> {
 async function getDoctorByCRM(crm: string): Promise<undefined | Array<{}>> {
   try {
     const doctor = await axios.get(`${url}:${port}/crm/${crm}`);
-    if (doctor)
-      return [doctor.data];
-    else
-      console.log("Médico não encontrado");
+    if (doctor) return [doctor.data];
+    else console.log("Médico não encontrado");
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
@@ -359,10 +353,8 @@ async function getDoctorByCRM(crm: string): Promise<undefined | Array<{}>> {
 async function getDoctorsByName(name: string): Promise<undefined | Array<{}>> {
   try {
     const doctor = await axios.get(`${url}:${port}/name/${name}`);
-    if (doctor && doctor.data.length > 0)
-      return doctor.data;
-    else
-      console.log("Médico não encontrado");
+    if (doctor && doctor.data.length > 0) return doctor.data;
+    else console.log("Médico não encontrado");
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
@@ -377,7 +369,7 @@ async function getDoctorByProperty(property: string, value: any): Promise<undefi
       doctor = await getDoctorByCPF(value);
       break;
     case "id":
-      doctor = [await getDoctorById(value)];
+      doctor = await getDoctorById(value);
       break;
     case "crm":
       doctor = await getDoctorByCRM(value);
