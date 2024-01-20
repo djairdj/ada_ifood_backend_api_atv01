@@ -1,6 +1,5 @@
-### Requisitos para executar a aplicação
+# Requisitos para executar a aplicação
 
-___
 Nesse projeto será usado TypeScript, então para executar a aplicação, será necessário um ambiente de execução JavaScript que suporta a transpilação de TypeScript, como exemplo:
 
 - [NodeJs](https://nodejs.org/en/download)
@@ -21,43 +20,12 @@ Instale o `Node.js` na versão 18 ou superior de acordo com seu Sistema Operacio
     node -v
   ```
 
-- Comece as instalações das dependências
+- Para Fins de execução, execute os seguintes comandos:
 
 ```bash
-  npm init -y
+  npm install
 ```
 
 ```bash
-  npm i -D typescript
-```
-
-Inicialize o Typescript:
-
-```bash
-  tsc --init
-```
-
-Provavelmente já estarás vendo o arquivo `tsconfig.json` na raiz do projeto, você poderá subtituir todas as linhas de dentro dele pelas correspondentes abaixo:
-
-```json
-{
-  "compilerOptions": {
-    "target": "es2020",
-    "module": "commonjs",
-    "rootDir": "./src/",
-    "sourceMap": true,
-    "outDir": "./dist/",
-    "forceConsistentCasingInFileNames": true,
-    "strict": true,
-    "skipLibCheck": true
-  }
-}
-```
-
-```bash
-  npm install axios fs.promises express ts-node @types/node @types/express readline uuid
-```
-
-```bash
-  npm install --save-dev nodemon
+  npm run dev
 ```
