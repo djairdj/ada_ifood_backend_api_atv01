@@ -296,13 +296,6 @@ async function getOneDoctor(): Promise<undefined | {}> {
 async function updateDoctor(): Promise<undefined | {}> {
   let doctor: any = await getOneDoctor();
   if (doctor) {
-    /*
-    console.table(result.splice(index, 1), ["name", "cpf", "title", "description"]);
-    console.table(result.splice(index, 1));
-    console.log(JSON.stringify(result[index]));
-    console.table([result[index]], ["name", "cpf", "title", "description"]);
-    delete result[index].id // Caso queira omitir o id da exibição
-    */
     console.table(doctor);
     let option;
     for (const i in doctor) {
