@@ -323,7 +323,7 @@ async function getDoctorByCPF(cpf: string): Promise<any> {
       console.log("Médico não encontrado");
   } catch (error: any) {
     let msg = "Médico não encontrado."
-    if (error.response.status != 404 ) msg = error.message
+    if (error.response.status != 404) msg = error.message
     console.log("Falha: " + msg);
   }
 }
@@ -398,14 +398,14 @@ async function deleteDoctorById(id: string): Promise<undefined | {}> {
     doctorDeleted = await axios.delete(`${url}:${port}/${id}`);
     return doctorDeleted.data;
   } catch (error: any) {
-    console.log("Falha o deletar médico: "+ error.message);
+    console.log("Falha o deletar médico: " + error.message);
   }
 }
 
 async function deleteDoctor(): Promise<undefined | {}> {
   let doctor: any = await getOneDoctor();
   if (doctor) {
-  console.table([doctor], ["name", "crm", "title"]);
+    console.table([doctor], ["name", "crm", "title"]);
     let choice: string = await input_keyboard("O médico acima foi encontrado na base de dados, digite 1 para confirmar, ou tecle enter para cancelar: ");
     if (choice.trim() == '1') {
       let result = await deleteDoctorById(doctor.id);
