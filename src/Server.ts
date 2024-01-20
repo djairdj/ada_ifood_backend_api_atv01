@@ -29,75 +29,75 @@ export const server = async (port: number = 3003) => {
   // Obter todos os médicos
   app.get('/',
     async (_, resp: Response) => {
-    // const doctorsList = await getAllDoctors();
-    const doctorsList = await JgetAllDoctors();
-    return resp.status(200).json(doctorsList);
-  });
+      // const doctorsList = await getAllDoctors();
+      const doctorsList = await JgetAllDoctors();
+      return resp.status(200).json(doctorsList);
+    });
   // Obter 1 médico pelo cpf
   app.get('/cpf/:cpf?',
     async (req, resp: Response) => {
-    if (!req.params.cpf)
-      return resp.status(404).json([]);
-    // const doctor = await getDoctorByCPF(req.params.cpf);
-    const doctor = await JgetDoctorByCPF(req.params.cpf);
-    if (doctor)
-      resp.status(200).json(doctor);
-    else
-      resp.status(404).end();
-  });
+      if (!req.params.cpf)
+        return resp.status(404).json([]);
+      // const doctor = await getDoctorByCPF(req.params.cpf);
+      const doctor = await JgetDoctorByCPF(req.params.cpf);
+      if (doctor)
+        resp.status(200).json(doctor);
+      else
+        resp.status(404).end();
+    });
   // Obter 1 médico pelo crm
   app.get('/crm/:crm?',
     async (req, resp: Response) => {
-    if (!req.params.crm) return resp.status(404).json([]);
-    // const doctor = await getDoctorByCRM(req.params.crm);
-    const doctor = await JgetDoctorByCRM(req.params.crm);
-    if (doctor) resp.status(200).json(doctor);
-    else resp.status(404).end();
-  });
+      if (!req.params.crm) return resp.status(404).json([]);
+      // const doctor = await getDoctorByCRM(req.params.crm);
+      const doctor = await JgetDoctorByCRM(req.params.crm);
+      if (doctor) resp.status(200).json(doctor);
+      else resp.status(404).end();
+    });
   // Obter um médico pelo nome
   app.get('/name/:name?',
     async (req, resp: Response) => {
-    if (!req.params.name) return resp.status(404).end();
-    // const doctor = await getDoctorsByName(req.params.name);
-    const doctor = await JgetDoctorsByName(req.params.name);
-    if (doctor) resp.status(200).json(doctor);
-    else resp.status(404).end();
-  });
+      if (!req.params.name) return resp.status(404).end();
+      // const doctor = await getDoctorsByName(req.params.name);
+      const doctor = await JgetDoctorsByName(req.params.name);
+      if (doctor) resp.status(200).json(doctor);
+      else resp.status(404).end();
+    });
   // Obter um médico pelo id
   app.get('/id/:id?',
     async (request: Request, resp: Response) => {
-    if (!request.params.id) return resp.status(404).json([]);
-    // const doctor = await getDoctorById(request.params.id);
-    const doctor = await JgetDoctorById(request.params.id);
-    if (doctor) resp.status(200).json(doctor);
-    else resp.status(404).end();
-  });
+      if (!request.params.id) return resp.status(404).json([]);
+      // const doctor = await getDoctorById(request.params.id);
+      const doctor = await JgetDoctorById(request.params.id);
+      if (doctor) resp.status(200).json(doctor);
+      else resp.status(404).end();
+    });
   // Adicionar 1 médico
   app.post('/',
     async (request, response: Response) => {
-    request.body['id'] = uuidV4();
-    // const doctor = await addDoctor(request.body);
-    const doctor = await JaddDoctor(request.body);
-    if (doctor) response.status(201).json(doctor);
-    else response.status(403).json({});
-  });
+      request.body['id'] = uuidV4();
+      // const doctor = await addDoctor(request.body);
+      const doctor = await JaddDoctor(request.body);
+      if (doctor) response.status(201).json(doctor);
+      else response.status(403).json({});
+    });
   // Atualizar 1 médico
   app.put('/',
     async (request, response: Response) => {
-    // const doctor = await updateDoctorById(request.body);
-    const doctor = await JupdateDoctorById(request.body);
-    if (doctor) response.status(201).json(doctor);
-    else response.status(403).json({});
-  });
+      // const doctor = await updateDoctorById(request.body);
+      const doctor = await JupdateDoctorById(request.body);
+      if (doctor) response.status(201).json(doctor);
+      else response.status(403).json({});
+    });
   // Deletar 1 médico
   app.delete('/:id?',
     async (request, response) => {
-    if (!request.params.id) return response.status(404).json([]);
-    // const doctor = await deleteDoctorById(request.params.id);
-    const doctor = await JdeleteDoctorById(request.params.id);
-    if (doctor) response.status(200).json(doctor);
-    else response.status(404).end();
-  });
+      if (!request.params.id) return response.status(404).json([]);
+      // const doctor = await deleteDoctorById(request.params.id);
+      const doctor = await JdeleteDoctorById(request.params.id);
+      if (doctor) response.status(200).json(doctor);
+      else response.status(404).end();
+    });
 }
 
 
@@ -253,7 +253,7 @@ async function JupdateDoctorById(body: any) {
   if (id) {
     try {
       result = readJsonFile(path);
-      let index = result.indexOf(result.find((a:any) => a.id == id));
+      let index = result.indexOf(result.find((a: any) => a.id == id));
       if (index > -1) {
         result[index] = body;
         writeJsonFile(result, path);
