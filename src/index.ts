@@ -416,8 +416,6 @@ async function deleteDoctor(): Promise<undefined | {}> {
 
 async function menu(): Promise<void> {
   let recall: boolean = true, opt: string, doctor: undefined | {};
-  // opt = await input_keyboard("Digite 1 para popular o banco de dados preliminarmente ou 0 para ignorar: ");
-  // if (opt == '1') await fillDataBase();
 
   let menu =
     `
@@ -478,6 +476,8 @@ async function menu(): Promise<void> {
 
 async function start(): Promise<void> {
   if (url == 'http://localhost') await server(port);
+  let opt = await input_keyboard("Digite 1 para popular o banco de dados preliminarmente ou 0 para ignorar: ");
+  if (opt == '1') await fillDataBase();
   await menu();
 }
 
