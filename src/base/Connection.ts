@@ -6,7 +6,7 @@ const connection_to_mysql = mysql.createPool(
     port: 3306,
     user: "root",
     password: "",
-    database: ''
+    database: 'api_ada_vem_ser_tech'
   }
 );
 export{connection_to_mysql as connection}
