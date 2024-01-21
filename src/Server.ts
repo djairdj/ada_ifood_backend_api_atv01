@@ -112,7 +112,7 @@ async function addDoctor(doctor: any) {
     x = await getDoctorByCPF(doctor.cpf);
     return x;
   } catch (error: any) {
-    console.log(error.message);
+    console.error(error.message);
   }
 }
 async function getDoctorByCPF(cpf: string) {
@@ -122,7 +122,7 @@ async function getDoctorByCPF(cpf: string) {
     );
     return doctor[0];
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function getDoctorByCRM(crm: string) {
@@ -132,7 +132,7 @@ async function getDoctorByCRM(crm: string) {
     );
     return doctor[0];
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function getDoctorById(id: string) {
@@ -142,7 +142,7 @@ async function getDoctorById(id: string) {
     );
     return doctor[0];
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function getDoctorsByName(name: string) {
@@ -152,7 +152,7 @@ async function getDoctorsByName(name: string) {
     );
     return doctorList;
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function getAllDoctors() {
@@ -162,7 +162,7 @@ async function getAllDoctors() {
     );
     return doctorList;
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function updateDoctorById(body: any) {
@@ -182,7 +182,7 @@ async function updateDoctorById(body: any) {
       if (result['affectedRows'] > 0)
         result = await getDoctorById(id);
     } catch (error: any) {
-      console.log(error.message);
+      console.error(error.message);
     }
   } else console.log("Não foi possível atualizar o médico sem o id.");
   return result;
@@ -196,7 +196,7 @@ async function deleteDoctorById(id: string) {
     if (doctor && result[0].affectedRows > 0)
       return doctor;
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 
@@ -211,7 +211,7 @@ async function JaddDoctor(doctor: any) {
     writeJsonFile(result, path);
     return result;
   } catch (error: any) {
-    console.log(error.message);
+    console.error(error.message);
   }
 }
 async function JgetDoctorByCPF(cpf: string) {
@@ -245,7 +245,7 @@ async function JgetAllDoctors() {
     let result = readJsonFile(path);
     return result;
   } catch (error: any) {
-    console.log("ERRO: " + error.message);
+    console.error("ERRO: " + error.message);
   }
 }
 async function JupdateDoctorById(body: any) {
@@ -261,7 +261,7 @@ async function JupdateDoctorById(body: any) {
       }
       return result;
     } catch (error: any) {
-      console.log(error.message);
+      console.error(error.message);
     }
   } else console.log("Não foi possível atualizar o médico sem o id.");
   return result;
@@ -279,7 +279,7 @@ async function JdeleteDoctorById(id: string) {
       }
       return result;
     } catch (error: any) {
-      console.log(error.message);
+      console.error(error.message);
     }
   } else console.log("Não foi possível atualizar o médico sem o id.");
   return result;

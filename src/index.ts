@@ -13,9 +13,8 @@ let port: number, url: string;
 port = 443;
 url = 'https://17b8d315-2f47-4429-aec4-caa081cfc417-00-1gcz5e768otcp.kirk.replit.dev';
 
-// port = 80;
-// url = 'http://localhost';
-
+port = 80;
+url = 'http://localhost';
 function input_keyboard(msg: string = ""): Promise<string> {
   const promisse = new Promise<string>((resolve) => {
     readLine.question(msg, (resposta) => {
@@ -30,7 +29,7 @@ async function fillDataBase(): Promise<void> {
     {
       "name": "Ailézig",
       "cpf": "32165412159",
-      "crm": "1234",
+      "crm": "123468",
       "title": "Cardiologista",
       "description": "Especialidade médica que se dedica ao diagnóstico e tratamento de doenças do coração e do sistema cardiovascular.",
       "id": "6daa6058-8186-422f-b944-ebc34afa95f8"
@@ -38,7 +37,7 @@ async function fillDataBase(): Promise<void> {
     {
       "name": "Bruno",
       "cpf": "32165412119",
-      "crm": "1235",
+      "crm": "123500",
       "title": "Dermatologista",
       "description": "Área médica que trata das doenças relacionadas à pele, cabelo e unhas, além de problemas dermatológicos.",
       "id": "ac6aa1cf-99e0-46b5-a61d-9062c0a545b5"
@@ -46,7 +45,7 @@ async function fillDataBase(): Promise<void> {
     {
       "name": "Christiane",
       "cpf": "14789632145",
-      "crm": "1236",
+      "crm": "123416",
       "title": "Endocrinologista",
       "description": "Especialidade que se concentra nos distúrbios hormonais e no sistema endócrino, como diabetes e distúrbios da tireoide.",
       "id": "a39617f9-4e5f-4b05-8c9e-2f617e685334"
@@ -174,7 +173,7 @@ async function fillDataBase(): Promise<void> {
     {
       "name": "Patrick Lima",
       "cpf": "96396395100",
-      "crm": "123132",
+      "crm": "123123",
       "title": "Pediatra",
       "description": "Especializado na saúde de crianças, abordando questões pediátricas, desenvolvimento infantil e prevenção de doenças.",
       "id": "b8fdab01-7670-4066-b013-0da1cc971d49"
@@ -214,7 +213,7 @@ async function fillDataBase(): Promise<void> {
     {
       "name": "Suverleide",
       "cpf": "12345678933",
-      "crm": "12345",
+      "crm": "123450",
       "title": "Medico Esportivo",
       "description": "Lida com a saúde de atletas, abrangendo prevenção, diagnóstico e tratamento de lesões relacionadas à prática esportiva.",
       "id": "808b9a89-5a72-4cc2-8405-dcba712adfac"
@@ -226,13 +225,21 @@ async function fillDataBase(): Promise<void> {
       "title": "Infectologia",
       "description": "Especialidade que se dedica ao estudo, diagnóstico e tratamento de doenças infecciosas causadas por vírus, bactérias, fungos ou parasitas.",
       "id": "cd6b69bd-f181-4ffc-a9cf-092e8959524b"
+    },
+    {
+      "name": "Tiririca",
+      "cpf": "32165498788",
+      "crm": "303030",
+      "title": "Palhaçada",
+      "description": "Profissional dedicado a despertar o humor.",
+      "id": "a50a00d7-a941-486e-abf2-083ed452dc1e"
     }
   ];
   for (const doctor of listagem) {
     try {
       await axios.post(`${url}:${port}/`, doctor);
     } catch (error: any) {
-      console.log("Erro: " + error.message);
+      console.error("Erro: " + error.message);
     }
   }
 }
@@ -242,7 +249,7 @@ async function getAllDoctors(): Promise<undefined | Array<{}>> {
     let doctors = await axios.get(`${url}:${port}/`);
     return doctors.data;
   } catch (error: any) {
-    console.log("Deu erro: " + error.message);
+    console.error("Deu erro: " + error.message);
   }
 }
 
@@ -308,7 +315,7 @@ async function updateDoctor(): Promise<undefined | {}> {
       doctor = await axios.put(`${url}:${port}/`, doctor);
       doctor = doctor.data;
     } catch (error: any) {
-      console.log("Erro ao atualizar médico: " + error.message);
+      console.error("Erro ao atualizar médico: " + error.message);
     }
   }
   return doctor;
@@ -322,7 +329,7 @@ async function getDoctorByCPF(cpf: string): Promise<undefined | Array<{}>> {
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
-    console.log("Falha: " + msg);
+    console.error("Falha: " + msg);
   }
 }
 
@@ -334,7 +341,7 @@ async function getDoctorById(id: string): Promise<undefined | Array<{}>> {
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
-    console.log("Falha: " + msg);
+    console.error("Falha: " + msg);
   }
 }
 
@@ -346,7 +353,7 @@ async function getDoctorByCRM(crm: string): Promise<undefined | Array<{}>> {
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
-    console.log("Falha: " + msg);
+    console.error("Falha: " + msg);
   }
 }
 
@@ -358,7 +365,7 @@ async function getDoctorsByName(name: string): Promise<undefined | Array<{}>> {
   } catch (error: any) {
     let msg = "Médico não encontrado."
     if (error.response.status != 404) msg = error.message
-    console.log("Falha: " + msg);
+    console.error("Falha: " + msg);
   }
 }
 
@@ -390,7 +397,7 @@ async function deleteDoctorById(id: string): Promise<undefined | {}> {
     doctorDeleted = await axios.delete(`${url}:${port}/${id}`);
     return doctorDeleted.data;
   } catch (error: any) {
-    console.log("Falha o deletar médico: " + error.message);
+    console.error("Falha o deletar médico: " + error.message);
   }
 }
 
@@ -463,7 +470,6 @@ async function menu(): Promise<void> {
     }
   }
   exit();
-
 }
 
 async function start(): Promise<void> {
