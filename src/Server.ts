@@ -23,7 +23,7 @@ function writeJsonFile(jsonObject: JSON | never[], file_path: string): void {
 export const server = async (port: number = 3003) => {
   const app = express();
   app.use(express.json());
-  app.listen(port, () => { console.log("Servidor ouvindo na porta " + port); });
+  app.listen(port, () => { console.log("Servidor local ouvindo na porta " + port); });
 
   // Obter todos os médicos
   app.get('/',
