@@ -12,6 +12,7 @@ const readLine = readline.createInterface({
 let port: number, url: string;
 port = 80;
 url = 'http://localhost';
+
 function input_keyboard(msg: string = ""): Promise<string> {
   const promisse = new Promise<string>((resolve) => {
     readLine.question(msg, (resposta) => {
