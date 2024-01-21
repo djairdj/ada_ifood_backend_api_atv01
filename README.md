@@ -20,11 +20,19 @@ Instale o `Node.js` na versão 18 ou superior de acordo com seu Sistema Operacio
     node -v
   ```
 
+  Se estiver usando a branch de conexão com banco de dados, certifique-se de ajustar as permissões no arquivo [Connections.ts](src/base/Connection.ts)
+
 - Para Fins de execução, execute os seguintes comandos:
 
 ```bash
   npm install
 ```
+
+```bash
+  ts-node src/index.ts
+```
+
+- Ou, para manutenção em desenvolvimento, utilize o:
 
 ```bash
   npm run dev
